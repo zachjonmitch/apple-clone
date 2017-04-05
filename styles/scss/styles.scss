@@ -1,0 +1,237 @@
+$footer-grey-accent: #f2f2f2;
+$red-iphone-match: #cc3341;
+$subtitles-grey: #888;
+$border-grey: #d6d6d6;
+
+@mixin background-image($url, $repeat, $size, $position) {
+    background: url($url);
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.container-fluid, .row {
+    margin: 0; 
+    padding: 0;
+}
+
+nav {
+    position: absolute;
+    height: 44px;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: inline-block;
+    line-height: 44px;
+    white-space: nowrap;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 0;
+        text-align: center;
+        height: 44px;
+        li {
+            display: inline-block;
+            font-size: 14px;
+            margin-left: 77px;
+            letter-spacing: .1px;
+            height: 44px;
+            top: 0;
+            vertical-align: middle;
+            &:first-child {
+                margin-left: 0;
+                font-size: 20px;
+                line-height: 44px;
+            }
+        }
+        #searchIcon {
+            width: 20px;
+            height: 44px;
+            display: inline-block;
+            @include background-image('http://www.apple.com/ac/globalnav/3/en_US/images/globalnav/search/image_large.svg', no-repeat, 16px 44px, center center);
+        }
+        #shoppingBag {
+            width: 20px;
+            height: 44px;
+            display: inline-block;
+            @include background-image('http://www.apple.com/ac/globalnav/3/en_US/images/globalnav/bag/image_large.svg', no-repeat, 16px 44px, center center);
+        }
+    }
+}
+
+.slideOne {
+    height: 706px;
+    background: $red-iphone-match;
+    #titleWrap {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 80px;
+        text-align: center;
+        color: white;
+        span {
+            font-size: 11px;
+            border: 1px solid white;
+            border-radius: 4px;
+            padding: 5px 8px 5px 8px;
+            letter-spacing: .7px;
+        }
+        h1 {
+            font-size: 31px;
+            letter-spacing: 1px;
+            margin: 30px -7px 0 0;
+        }
+        h2 {
+            display: inline-block;
+            width: 100%;
+            vertical-align: middle;
+            margin-top: 0;
+            font-size: 42px;
+            line-height: 80px;
+            .productPNG {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: -54px;
+                margin-top: -7px;
+                width: 220px;
+                height: 75px;
+                @include background-image('http://images.apple.com/v/home/de/images/shared/productred_logo_medium_2x.png', no-repeat, 214px 60px, center center);
+            }
+        }
+    }
+    #iphoneWrapper {
+        position: absolute;
+        top: 226px;
+        width: 97%;
+        height: 480px;
+        z-index: 100;
+        overflow: hidden;
+        @include background-image('http://images.apple.com/v/home/de/images/heroes/iphone7_productred_small.png', no-repeat, null, top center);
+    }
+}
+
+.quadImages {
+    padding: 0;
+    margin: 0;
+    height: 200px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    z-index: 100;
+}
+
+#quad1 {
+    border-left: none;
+    border-right: 2px solid white;
+    @include background-image('http://images.apple.com/v/home/de/images/promos/wwdc17_large_2x.jpg', no-repeat, 360px 200px, null);
+}
+#quad2 {
+    border-right: 2px solid white;
+    @include background-image('http://images.apple.com/v/home/de/images/promos/macbook_pro_large_2x.jpg', no-repeat, 360px 200px, null);
+}
+#quad3 {
+    border-right: 2px solid white;
+    @include background-image('http://images.apple.com/v/home/de/images/promos/accessories_large_2x.jpg', no-repeat, 360px 200px, null);
+}
+#quad4 {
+    border-right: none;
+    @include background-image('http://images.apple.com/v/home/de/images/promos/supplier_responsibility_large_2x.jpg', no-repeat, 360px 200px, null);
+}
+
+footer {
+    background-color: $footer-grey-accent;
+    font-size: 11px;
+    height: auto;
+    width: 100%;
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+        &:first-child {
+            padding-bottom: 20px;
+        }
+    }
+    ul {
+        list-style: none;
+        padding-top: 20px;
+        padding-left: 0;
+    }    
+    li {
+        padding-left: 0;
+        line-height: 1.7;
+        &:first-child {
+            font-weight: bold;
+        } 
+    }
+}
+
+.footerWrap {
+    color: $subtitles-grey;
+    font-size: 12px;
+    p {
+        margin-bottom: 6px;
+    }
+    #footerLegal {
+        border-top: 1px solid $border-grey;
+        padding-top: 8px;
+        margin-bottom: 43px;
+        .col-md-4, .col-md-2 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .copyright {
+            padding-left: 0;
+        }
+        .legalLinks {
+            text-align: left;
+            a {
+                padding-right: 10px;
+                padding-left: 10px;
+                color: #555;
+                border-right: 1px solid $border-grey;
+                text-align: center;
+                font-size: 11px;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+        .footerLocal {
+            text-align: right;
+            line-height: 16px;
+            span {
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: 50%;
+                @include background-image('http://images.apple.com/ac/flags/1/images/us/32.png', no-repeat, 16px 16px, null);
+            }
+            a {
+                color: $subtitles-grey;
+                cursor: pointer;
+                display: inline-block;
+                vertical-align: middle;
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
