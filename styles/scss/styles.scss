@@ -1,3 +1,10 @@
+$break-xxlg: 2560px;
+$break-xlg: 1920px;
+$break-lg: 1440px;
+$break-md: 1024px;
+$break-sm: 768px;
+$break-xs: 480px;
+
 $footer-grey-accent: #f2f2f2;
 $red-iphone-match: #cc3341;
 $subtitles-grey: #888;
@@ -10,78 +17,12 @@ $border-grey: #d6d6d6;
     background-position: $position;
 }
 
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-}
-
-.container-fluid, .row {
-    margin: 0; 
-    padding: 0;
-}
-
-nav {
+@mixin slides {
     position: absolute;
-    height: 44px;
     width: 100%;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    display: inline-block;
-    line-height: 44px;
-    white-space: nowrap;
-    ul {
-        list-style: none;
-        padding: 0;
-        margin-top: 0;
-        text-align: center;
-        height: 44px;
-        li {
-            display: inline-block;
-            font-size: 14px;
-            margin-left: 77px;
-            letter-spacing: .1px;
-            height: 44px;
-            top: 0;
-            vertical-align: middle;
-            &:first-child {
-                margin-left: 0;
-                font-size: 20px;
-                line-height: 44px;
-            }
-        }
-        #searchIcon {
-            width: 20px;
-            height: 44px;
-            display: inline-block;
-            @include background-image('http://www.apple.com/ac/globalnav/3/en_US/images/globalnav/search/image_large.svg', no-repeat, 16px 44px, center center);
-        }
-        #shoppingBag {
-            width: 20px;
-            height: 44px;
-            display: inline-block;
-            @include background-image('http://www.apple.com/ac/globalnav/3/en_US/images/globalnav/bag/image_large.svg', no-repeat, 16px 44px, center center);
-        }
-    }
-}
-
-.slideOne {
     height: 706px;
     background: $red-iphone-match;
-    #titleWrap {
+    .titleWrap {
         position: absolute;
         width: 100%;
         height: auto;
@@ -118,7 +59,7 @@ nav {
             }
         }
     }
-    #iphoneWrapper {
+    .iphoneWrapper {
         position: absolute;
         top: 226px;
         width: 97%;
@@ -128,6 +69,180 @@ nav {
         @include background-image('http://images.apple.com/v/home/de/images/heroes/iphone7_productred_small.png', no-repeat, null, top center);
     }
 }
+
+@mixin bp-xlg {
+  @media only screen and (min-width: $break-xlg) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  @media only screen and (max-width: $break-lg) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media only screen and (max-width: $break-md) {
+    @content;
+  }
+}
+
+@mixin bp-sm {
+  @media only screen and (max-width: $break-sm) {
+    @content;
+  }
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden !important;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.container-fluid, .row {
+    margin: 0; 
+    padding: 0;
+}
+
+nav {
+    position: absolute;
+    height: 44px;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: inline-block;
+    line-height: 44px;
+    white-space: nowrap;
+    z-index: 100;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 0;
+        text-align: center;
+        height: 44px;
+        li {
+            display: inline-block;
+            font-size: 14px;
+            margin-left: 77px;
+            letter-spacing: .1px;
+            height: 44px;
+            top: 0;
+            vertical-align: middle;
+            &:first-child {
+                margin-left: 0;
+                font-size: 20px;
+                line-height: 44px;
+            }
+        }
+        #searchIcon {
+            width: 20px;
+            height: 44px;
+            display: inline-block;
+            @include background-image('http://www.apple.com/ac/globalnav/3/en_US/images/globalnav/search/image_large.svg', no-repeat, 16px 44px, center center);
+        }
+        #shoppingBag {
+            width: 20px;
+            height: 44px;
+            display: inline-block;
+            @include background-image('http://www.apple.com/ac/globalnav/3/en_US/images/globalnav/bag/image_large.svg', no-repeat, 16px 44px, center center);
+        }
+    }
+}
+
+#sliderWrap {
+    width: 100%;
+    height: 706px;
+    .slideOne {
+        @include slides;
+    }
+    .slideTwo {
+        position: absolute;
+        background: rgb(242, 242, 242);
+        width: 100%;
+        height: 706px;
+        transform: translate3d(100%, 0px, 0px);
+        .titleWrap {
+            position: absolute;
+            top: 11%;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            z-index: 100;
+            .logo {
+                width: 400px;
+                height: 50px;
+                margin: 0 auto;
+                @include background-image('https://images.apple.com/v/home/de/images/shared/watch_logo_large_2x.png', no-repeat, 122px 44px, center center)
+            }
+            h1 {
+                font-size: 45px;
+                font-weight: bold;
+                margin-top: 5px;
+                margin-right: -10px;
+            }
+        }
+        .watchWrap {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            transform: translateY(5%);
+            z-index: -1;
+            @include background-image('https://images.apple.com/v/home/de/images/heroes/watch_large_2x.jpg', no-repeat, contain, top center)
+        }
+    }
+    .slideThree {
+        position: absolute;
+        background: rgb(250, 250, 250);
+        width: 100%;
+        height: 706px;
+        transform: translate3d(200%, 0px, 0px);
+        .titleWrap {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            height: auto;
+            top: 12%;
+            h1 {
+                font-size: 30px;
+                margin-bottom: 5px;
+            }
+            h2 {
+                font-size: 45px;
+                font-weight: bold;
+                margin-top: 0;
+            }
+        }
+        .ipadWrap {
+            position: absolute;
+            width: 100%;
+            height: calc(77% - 54px);
+            bottom: 0;
+            z-index: -1;
+            @include background-image('https://images.apple.com/v/home/de/images/heroes/ipad_availability_medium_2x.jpg', no-repeat, auto 100%, center center);
+        }
+    }
+    .slideFour {
+        @include slides;
+        transform: translate3d(300%, 0px, 0px);
+    }
+}
+
 
 .quadImages {
     padding: 0;
@@ -142,18 +257,30 @@ nav {
     border-left: none;
     border-right: 2px solid white;
     @include background-image('http://images.apple.com/v/home/de/images/promos/wwdc17_large_2x.jpg', no-repeat, 360px 200px, null);
+    @include bp-md {
+        @include background-image('http://images.apple.com/v/home/de/images/promos/wwdc17_medium_2x.jpg', no-repeat, 640px 200px, center center);
+    }
 }
 #quad2 {
     border-right: 2px solid white;
     @include background-image('http://images.apple.com/v/home/de/images/promos/macbook_pro_large_2x.jpg', no-repeat, 360px 200px, null);
+    @include bp-md {
+        @include background-image('http://images.apple.com/v/home/de/images/promos/macbook_pro_medium_2x.jpg', no-repeat, 640px 200px, center center);
+    }
 }
 #quad3 {
     border-right: 2px solid white;
     @include background-image('http://images.apple.com/v/home/de/images/promos/accessories_large_2x.jpg', no-repeat, 360px 200px, null);
+    @include bp-md {
+        @include background-image('http://images.apple.com/v/home/de/images/promos/accessories_medium_2x.jpg', no-repeat, 640px 200px, center center);
+    }
 }
 #quad4 {
     border-right: none;
     @include background-image('http://images.apple.com/v/home/de/images/promos/supplier_responsibility_large_2x.jpg', no-repeat, 360px 200px, null);
+    @include bp-md {
+        @include background-image('http://images.apple.com/v/home/de/images/promos/supplier_responsibility_medium_2x.jpg', no-repeat, 640px 200px, center center);
+    }
 }
 
 footer {

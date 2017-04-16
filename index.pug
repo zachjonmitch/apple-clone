@@ -6,6 +6,7 @@ html
         title Apple Clone
         meta(name="description" content="Apple website clone")
         meta(name="author" content="Zach Mitchell")
+        meta(name="viewport" content="width=device-width, height=device-height")
 
         link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
         link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
@@ -27,26 +28,47 @@ html
                         a(id="searchIcon")
                     li
                         a(id="shoppingBag")
+        
+        section(id="sliderWrap")
+            section(id="imageSlider")
+                div(class="slideOne")
+                    div(class="titleWrap")
+                        span(class="editionButton") Special Edition
+                        h1(class="subtitle") iPhone 7
+                        h2(class="title") Now in 
+                            div(class="productPNG")
+                    div(class="iphoneWrapper")
 
-        section(id="imageSlider")
-            div(class="slideOne")
-                div(id="titleWrap")
-                    span(class="editionButton") Special Edition
-                    h1(class="subtitle") iPhone 7
-                    h2(class="title") Now in 
-                        div(class="productPNG")
-                div(id="iphoneWrapper")
+                div(class="slideTwo")
+                    div(class="titleWrap")
+                        div(class="logo")
+                        h1(class="watchTitle") Live a better day.
+                    div(class="watchWrap")
+
+                div(class="slideThree")
+                    div(class="titleWrap")
+                        h1 iPad
+                        h2 Flat-out fun.
+                    div(class="ipadWrap")
+
+                div(class="slideFour")
+                    div(class="titleWrap")
+                        span(class="editionButton") Special Edition
+                        h1(class="subtitle") iPhone 7
+                        h2(class="title") Now in 
+                            div(class="productPNG")
+                    div(class="iphoneWrapper")
 
         section(id="quadImageBar")
             div(class="container-fluid")
-                div(class="row")
-                    div(id="quad1" class="quadImages col-md-3")
+                div(class="row-fluid")
+                    div(id="quad1" class="quadImages col-md-3 col-sm-6")
                         
-                    div(id="quad2" class="quadImages col-md-3")
+                    div(id="quad2" class="quadImages col-md-3 col-sm-6")
                         
-                    div(id="quad3" class="quadImages col-md-3")
+                    div(id="quad3" class="quadImages col-md-3 col-sm-6")
                         
-                    div(id="quad4" class="quadImages col-md-3")
+                    div(id="quad4" class="quadImages col-md-3 col-sm-6")
                         
 
         footer
@@ -132,6 +154,9 @@ html
                             div(class="footerLocal col-md-2")
                                 span(id="flagPNG")
                                 a United States
+
+        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js")
+        script(type="text/javascript" src="js/scripts.js")
                             
 
 

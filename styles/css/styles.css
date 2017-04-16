@@ -3,7 +3,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden; }
 
 *, *::before, *::after {
   box-sizing: border-box; }
@@ -26,7 +27,8 @@ nav {
   color: white;
   display: inline-block;
   line-height: 44px;
-  white-space: nowrap; }
+  white-space: nowrap;
+  z-index: 100; }
   nav ul {
     list-style: none;
     padding: 0;
@@ -62,54 +64,176 @@ nav {
       background-size: 16px 44px;
       background-position: center center; }
 
-.slideOne {
-  height: 706px;
-  background: #cc3341; }
-  .slideOne #titleWrap {
+#sliderWrap {
+  width: 100%;
+  height: 706px; }
+  #sliderWrap .slideOne {
     position: absolute;
     width: 100%;
-    height: auto;
-    top: 80px;
-    text-align: center;
-    color: white; }
-    .slideOne #titleWrap span {
-      font-size: 11px;
-      border: 1px solid white;
-      border-radius: 4px;
-      padding: 5px 8px 5px 8px;
-      letter-spacing: .7px; }
-    .slideOne #titleWrap h1 {
-      font-size: 31px;
-      letter-spacing: 1px;
-      margin: 30px -7px 0 0; }
-    .slideOne #titleWrap h2 {
-      display: inline-block;
+    height: 706px;
+    background: #cc3341; }
+    #sliderWrap .slideOne .titleWrap {
+      position: absolute;
       width: 100%;
-      vertical-align: middle;
-      margin-top: 0;
-      font-size: 42px;
-      line-height: 80px; }
-      .slideOne #titleWrap h2 .productPNG {
+      height: auto;
+      top: 80px;
+      text-align: center;
+      color: white; }
+      #sliderWrap .slideOne .titleWrap span {
+        font-size: 11px;
+        border: 1px solid white;
+        border-radius: 4px;
+        padding: 5px 8px 5px 8px;
+        letter-spacing: .7px; }
+      #sliderWrap .slideOne .titleWrap h1 {
+        font-size: 31px;
+        letter-spacing: 1px;
+        margin: 30px -7px 0 0; }
+      #sliderWrap .slideOne .titleWrap h2 {
         display: inline-block;
+        width: 100%;
         vertical-align: middle;
-        margin-right: -54px;
-        margin-top: -7px;
-        width: 220px;
-        height: 75px;
-        background: url("http://images.apple.com/v/home/de/images/shared/productred_logo_medium_2x.png");
-        background-repeat: no-repeat;
-        background-size: 214px 60px;
-        background-position: center center; }
-  .slideOne #iphoneWrapper {
+        margin-top: 0;
+        font-size: 42px;
+        line-height: 80px; }
+        #sliderWrap .slideOne .titleWrap h2 .productPNG {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: -54px;
+          margin-top: -7px;
+          width: 220px;
+          height: 75px;
+          background: url("http://images.apple.com/v/home/de/images/shared/productred_logo_medium_2x.png");
+          background-repeat: no-repeat;
+          background-size: 214px 60px;
+          background-position: center center; }
+    #sliderWrap .slideOne .iphoneWrapper {
+      position: absolute;
+      top: 226px;
+      width: 97%;
+      height: 480px;
+      z-index: 100;
+      overflow: hidden;
+      background: url("http://images.apple.com/v/home/de/images/heroes/iphone7_productred_small.png");
+      background-repeat: no-repeat;
+      background-position: top center; }
+  #sliderWrap .slideTwo {
     position: absolute;
-    top: 226px;
-    width: 97%;
-    height: 480px;
-    z-index: 100;
-    overflow: hidden;
-    background: url("http://images.apple.com/v/home/de/images/heroes/iphone7_productred_small.png");
-    background-repeat: no-repeat;
-    background-position: top center; }
+    background: #f2f2f2;
+    width: 100%;
+    height: 706px;
+    transform: translate3d(100%, 0px, 0px); }
+    #sliderWrap .slideTwo .titleWrap {
+      position: absolute;
+      top: 11%;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      z-index: 100; }
+      #sliderWrap .slideTwo .titleWrap .logo {
+        width: 400px;
+        height: 50px;
+        margin: 0 auto;
+        background: url("https://images.apple.com/v/home/de/images/shared/watch_logo_large_2x.png");
+        background-repeat: no-repeat;
+        background-size: 122px 44px;
+        background-position: center center; }
+      #sliderWrap .slideTwo .titleWrap h1 {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-right: -10px; }
+    #sliderWrap .slideTwo .watchWrap {
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      transform: translateY(5%);
+      z-index: -1;
+      background: url("https://images.apple.com/v/home/de/images/heroes/watch_large_2x.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top center; }
+  #sliderWrap .slideThree {
+    position: absolute;
+    background: #fafafa;
+    width: 100%;
+    height: 706px;
+    transform: translate3d(200%, 0px, 0px); }
+    #sliderWrap .slideThree .titleWrap {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      height: auto;
+      top: 12%; }
+      #sliderWrap .slideThree .titleWrap h1 {
+        font-size: 30px;
+        margin-bottom: 5px; }
+      #sliderWrap .slideThree .titleWrap h2 {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 0; }
+    #sliderWrap .slideThree .ipadWrap {
+      position: absolute;
+      width: 100%;
+      height: calc(77% - 54px);
+      bottom: 0;
+      z-index: -1;
+      background: url("https://images.apple.com/v/home/de/images/heroes/ipad_availability_medium_2x.jpg");
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center; }
+  #sliderWrap .slideFour {
+    position: absolute;
+    width: 100%;
+    height: 706px;
+    background: #cc3341;
+    transform: translate3d(300%, 0px, 0px); }
+    #sliderWrap .slideFour .titleWrap {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 80px;
+      text-align: center;
+      color: white; }
+      #sliderWrap .slideFour .titleWrap span {
+        font-size: 11px;
+        border: 1px solid white;
+        border-radius: 4px;
+        padding: 5px 8px 5px 8px;
+        letter-spacing: .7px; }
+      #sliderWrap .slideFour .titleWrap h1 {
+        font-size: 31px;
+        letter-spacing: 1px;
+        margin: 30px -7px 0 0; }
+      #sliderWrap .slideFour .titleWrap h2 {
+        display: inline-block;
+        width: 100%;
+        vertical-align: middle;
+        margin-top: 0;
+        font-size: 42px;
+        line-height: 80px; }
+        #sliderWrap .slideFour .titleWrap h2 .productPNG {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: -54px;
+          margin-top: -7px;
+          width: 220px;
+          height: 75px;
+          background: url("http://images.apple.com/v/home/de/images/shared/productred_logo_medium_2x.png");
+          background-repeat: no-repeat;
+          background-size: 214px 60px;
+          background-position: center center; }
+    #sliderWrap .slideFour .iphoneWrapper {
+      position: absolute;
+      top: 226px;
+      width: 97%;
+      height: 480px;
+      z-index: 100;
+      overflow: hidden;
+      background: url("http://images.apple.com/v/home/de/images/heroes/iphone7_productred_small.png");
+      background-repeat: no-repeat;
+      background-position: top center; }
 
 .quadImages {
   padding: 0;
@@ -125,24 +249,48 @@ nav {
   background: url("http://images.apple.com/v/home/de/images/promos/wwdc17_large_2x.jpg");
   background-repeat: no-repeat;
   background-size: 360px 200px; }
+  @media only screen and (max-width: 1024px) {
+    #quad1 {
+      background: url("http://images.apple.com/v/home/de/images/promos/wwdc17_medium_2x.jpg");
+      background-repeat: no-repeat;
+      background-size: 640px 200px;
+      background-position: center center; } }
 
 #quad2 {
   border-right: 2px solid white;
   background: url("http://images.apple.com/v/home/de/images/promos/macbook_pro_large_2x.jpg");
   background-repeat: no-repeat;
   background-size: 360px 200px; }
+  @media only screen and (max-width: 1024px) {
+    #quad2 {
+      background: url("http://images.apple.com/v/home/de/images/promos/macbook_pro_medium_2x.jpg");
+      background-repeat: no-repeat;
+      background-size: 640px 200px;
+      background-position: center center; } }
 
 #quad3 {
   border-right: 2px solid white;
   background: url("http://images.apple.com/v/home/de/images/promos/accessories_large_2x.jpg");
   background-repeat: no-repeat;
   background-size: 360px 200px; }
+  @media only screen and (max-width: 1024px) {
+    #quad3 {
+      background: url("http://images.apple.com/v/home/de/images/promos/accessories_medium_2x.jpg");
+      background-repeat: no-repeat;
+      background-size: 640px 200px;
+      background-position: center center; } }
 
 #quad4 {
   border-right: none;
   background: url("http://images.apple.com/v/home/de/images/promos/supplier_responsibility_large_2x.jpg");
   background-repeat: no-repeat;
   background-size: 360px 200px; }
+  @media only screen and (max-width: 1024px) {
+    #quad4 {
+      background: url("http://images.apple.com/v/home/de/images/promos/supplier_responsibility_medium_2x.jpg");
+      background-repeat: no-repeat;
+      background-size: 640px 200px;
+      background-position: center center; } }
 
 footer {
   background-color: #f2f2f2;
