@@ -15,6 +15,13 @@ html
     body
         header
             nav
+                ul(class="mobileNav")
+                    li
+                        a(class="fa fa-bars")
+                    li
+                        a(class="fa fa-apple")
+                    li
+                        a(id="shoppingBag")
                 ul
                     li(class="fa fa-apple")
                     li Mac
@@ -28,9 +35,11 @@ html
                         a(id="searchIcon")
                     li
                         a(id="shoppingBag")
+
+        section(id="transparentWrap")
         
-        section(id="sliderWrap")
-            section(id="imageSlider")
+        section(id="slideContainer")
+            section(id="sliderWrap")
                 div(class="slideOne")
                     div(class="titleWrap")
                         span(class="editionButton") Special Edition
@@ -61,7 +70,7 @@ html
 
         section(id="quadImageBar")
             div(class="container-fluid")
-                div(class="row-fluid")
+                div(class="row")
                     div(id="quad1" class="quadImages col-md-3 col-sm-6")
                         
                     div(id="quad2" class="quadImages col-md-3 col-sm-6")
@@ -73,7 +82,8 @@ html
 
         footer
             div(class="container")
-                div(class="row-fluid")
+                div(class="row")
+                    div(class="col-sm-12") Shop and Learn
                     div(class="col-md-2 col-md-offset-1")
                         ul
                             li Shop and Learn
@@ -87,6 +97,7 @@ html
                             li iPod
                             li Accessories
                             li Gift Cards
+                    div(class="col-sm-12") Apple Store
                     div(class="col-md-2")
                         ul
                             li Apple Store
@@ -100,6 +111,8 @@ html
                             li Reuse and Recycling
                             li Order Status
                             li Shopping Help
+                    div(class="col-sm-12") For Education
+                    div(class="col-sm-12") For Business
                     div(class="col-md-2")
                         ul
                             li For Education
@@ -109,6 +122,8 @@ html
                             li For Business
                             li Apple and Business
                             li Shop for Business
+                    div(class="col-sm-12") Account
+                    div(class="col-sm-12") Apple Values
                     div(class="col-md-2")
                         ul
                             li Account
@@ -123,6 +138,7 @@ html
                             li Inclusion and Diversity
                             li Privacy
                             li Supplier Responsibility
+                    div(class="col-sm-12") About Apple
                     div(class="col-md-2")
                         ul
                             li About Apple

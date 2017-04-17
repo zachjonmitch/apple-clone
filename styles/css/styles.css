@@ -1,10 +1,9 @@
-body {
+body, html {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow-x: hidden; }
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
 
 *, *::before, *::after {
   box-sizing: border-box; }
@@ -27,14 +26,21 @@ nav {
   color: white;
   display: inline-block;
   line-height: 44px;
+  z-index: 100;
   white-space: nowrap;
-  z-index: 100; }
+  overflow: hidden; }
+  @media only screen and (max-width: 768px) {
+    nav {
+      height: 48px; } }
   nav ul {
     list-style: none;
     padding: 0;
     margin-top: 0;
     text-align: center;
     height: 44px; }
+    @media only screen and (max-width: 768px) {
+      nav ul {
+        display: none; } }
     nav ul li {
       display: inline-block;
       font-size: 14px;
@@ -47,6 +53,9 @@ nav {
         margin-left: 0;
         font-size: 20px;
         line-height: 44px; }
+      @media only screen and (max-width: 1024px) {
+        nav ul li {
+          margin-left: 50px; } }
     nav ul #searchIcon {
       width: 20px;
       height: 44px;
@@ -63,6 +72,55 @@ nav {
       background-repeat: no-repeat;
       background-size: 16px 44px;
       background-position: center center; }
+
+.mobileNav {
+  position: absolute;
+  width: 100%;
+  height: 44px;
+  top: 0;
+  display: none; }
+  @media only screen and (max-width: 768px) {
+    .mobileNav {
+      display: inline-block; } }
+  .mobileNav .fa-bars {
+    position: absolute;
+    font-size: 20px;
+    left: 0;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    color: white;
+    cursor: pointer;
+    line-height: 44px; }
+    .mobileNav .fa-bars:hover {
+      text-decoration: none; }
+  .mobileNav .fa-apple {
+    position: absolute;
+    left: 50%;
+    font-size: 20px;
+    margin-left: -5px;
+    color: white;
+    cursor: pointer;
+    line-height: 44px; }
+    .mobileNav .fa-apple:hover {
+      text-decoration: none; }
+  .mobileNav #shoppingBag {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    background-size: 18px 48px; }
+
+#transparentWrap {
+  width: 100%;
+  height: 706px;
+  position: relative; }
+
+#slideContainer {
+  position: absolute;
+  width: 100%;
+  height: 706px;
+  overflow: hidden;
+  top: 0; }
 
 #sliderWrap {
   width: 100%;
@@ -297,6 +355,20 @@ footer {
   font-size: 11px;
   height: auto;
   width: 100%; }
+  @media only screen and (max-width: 768px) {
+    footer {
+      padding-top: 20px; } }
+  footer .col-sm-12 {
+    display: none;
+    padding: 10px 0 10px 0;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-bottom: 1px solid #d6d6d6;
+    cursor: pointer;
+    font-size: 12px; }
+    @media only screen and (max-width: 768px) {
+      footer .col-sm-12 {
+        display: block; } }
   footer .container {
     padding-left: 0;
     padding-right: 0; }
@@ -306,6 +378,9 @@ footer {
     list-style: none;
     padding-top: 20px;
     padding-left: 0; }
+    @media only screen and (max-width: 768px) {
+      footer ul {
+        display: none; } }
   footer li {
     padding-left: 0;
     line-height: 1.7; }
@@ -321,6 +396,10 @@ footer {
     border-top: 1px solid #d6d6d6;
     padding-top: 8px;
     margin-bottom: 43px; }
+    @media only screen and (max-width: 768px) {
+      .footerWrap #footerLegal {
+        border-top: none;
+        margin-bottom: 10px; } }
     .footerWrap #footerLegal .col-md-4, .footerWrap #footerLegal .col-md-2 {
       padding-left: 0;
       padding-right: 0; }
@@ -328,6 +407,9 @@ footer {
       padding-left: 0; }
     .footerWrap #footerLegal .legalLinks {
       text-align: left; }
+      @media only screen and (max-width: 768px) {
+        .footerWrap #footerLegal .legalLinks {
+          padding-left: 0; } }
       .footerWrap #footerLegal .legalLinks a {
         padding-right: 10px;
         padding-left: 10px;
@@ -337,9 +419,15 @@ footer {
         font-size: 11px; }
         .footerWrap #footerLegal .legalLinks a:last-child {
           border-right: none; }
+        @media only screen and (max-width: 768px) {
+          .footerWrap #footerLegal .legalLinks a {
+            padding-left: 0; } }
     .footerWrap #footerLegal .footerLocal {
       text-align: right;
       line-height: 16px; }
+      @media only screen and (max-width: 768px) {
+        .footerWrap #footerLegal .footerLocal {
+          display: none; } }
       .footerWrap #footerLegal .footerLocal span {
         width: 16px;
         height: 16px;

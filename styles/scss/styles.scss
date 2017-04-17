@@ -94,13 +94,12 @@ $border-grey: #d6d6d6;
   }
 }
 
-body {
+body, html {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow-x: hidden !important;
 }
 
 *, *::before, *::after {
@@ -127,14 +126,21 @@ nav {
     color: white;
     display: inline-block;
     line-height: 44px;
-    white-space: nowrap;
     z-index: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    @include bp-sm {
+        height: 48px;
+    }
     ul {
         list-style: none;
         padding: 0;
         margin-top: 0;
         text-align: center;
         height: 44px;
+        @include bp-sm {
+            display: none;
+        }
         li {
             display: inline-block;
             font-size: 14px;
@@ -147,6 +153,9 @@ nav {
                 margin-left: 0;
                 font-size: 20px;
                 line-height: 44px;
+            }
+            @include bp-md {
+                margin-left: 50px;
             }
         }
         #searchIcon {
@@ -162,6 +171,62 @@ nav {
             @include background-image('http://www.apple.com/ac/globalnav/3/en_US/images/globalnav/bag/image_large.svg', no-repeat, 16px 44px, center center);
         }
     }
+}
+
+.mobileNav {
+    position: absolute;
+    width: 100%;
+    height: 44px;
+    top: 0;
+    display: none;
+    @include bp-sm {
+        display: inline-block;
+    }
+    .fa-bars {
+        position: absolute;
+        font-size: 20px;
+        left: 0;
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        color: white;
+        cursor: pointer;
+        line-height: 44px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .fa-apple {
+        position: absolute;
+        left: 50%;
+        font-size: 20px;
+        margin-left: -5px;
+        color: white;
+        cursor: pointer;
+        line-height: 44px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    #shoppingBag {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        background-size: 18px 48px;
+    }
+}
+
+#transparentWrap {
+    width: 100%;
+    height: 706px;
+    position: relative;
+}
+#slideContainer {
+    position: absolute;
+    width: 100%;
+    height: 706px;
+    overflow: hidden;
+    top: 0;
 }
 
 #sliderWrap {
@@ -288,6 +353,21 @@ footer {
     font-size: 11px;
     height: auto;
     width: 100%;
+    @include bp-sm {
+        padding-top: 20px;
+    }
+    .col-sm-12 {
+        display: none;
+        padding: 10px 0 10px 0;
+        margin-right: 15px;
+        margin-left: 15px;
+        border-bottom: 1px solid $border-grey;
+        cursor: pointer;
+        font-size: 12px;
+        @include bp-sm {
+            display: block;
+        }
+    }
     .container {
         padding-left: 0;
         padding-right: 0;
@@ -299,6 +379,9 @@ footer {
         list-style: none;
         padding-top: 20px;
         padding-left: 0;
+        @include bp-sm {
+            display: none;
+        }
     }    
     li {
         padding-left: 0;
@@ -319,6 +402,10 @@ footer {
         border-top: 1px solid $border-grey;
         padding-top: 8px;
         margin-bottom: 43px;
+        @include bp-sm {
+            border-top: none;
+            margin-bottom: 10px;
+        }
         .col-md-4, .col-md-2 {
             padding-left: 0;
             padding-right: 0;
@@ -328,6 +415,9 @@ footer {
         }
         .legalLinks {
             text-align: left;
+            @include bp-sm {
+                padding-left: 0;
+            }
             a {
                 padding-right: 10px;
                 padding-left: 10px;
@@ -338,11 +428,17 @@ footer {
                 &:last-child {
                     border-right: none;
                 }
+                @include bp-sm {
+                    padding-left: 0;
+                }
             }
         }
         .footerLocal {
             text-align: right;
             line-height: 16px;
+            @include bp-sm {
+                display: none;
+            }
             span {
                 width: 16px;
                 height: 16px;
