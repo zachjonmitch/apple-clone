@@ -115,9 +115,6 @@ nav {
   width: 100%;
   height: 706px;
   position: relative; }
-  @media only screen and (max-width: 1024px) {
-    #transparentWrap {
-      height: 100%; } }
 
 #slideContainer {
   position: absolute;
@@ -125,9 +122,6 @@ nav {
   height: 706px;
   top: 0;
   overflow: hidden; }
-  @media only screen and (max-width: 1024px) {
-    #slideContainer {
-      height: 100%; } }
 
 #sliderWrap {
   width: 100%;
@@ -141,9 +135,6 @@ nav {
     width: 100%;
     height: 706px;
     background: #cc3341; }
-    @media only screen and (max-width: 1024px) {
-      #sliderWrap .slideOne {
-        height: 100%; } }
     #sliderWrap .slideOne .titleWrap {
       position: absolute;
       width: 100%;
@@ -203,9 +194,6 @@ nav {
     width: 100%;
     height: 706px;
     transform: translate3d(100%, 0px, 0px); }
-    @media only screen and (max-width: 1024px) {
-      #sliderWrap .slideTwo {
-        height: 100%; } }
     #sliderWrap .slideTwo .titleWrap {
       position: absolute;
       top: 11%;
@@ -254,9 +242,6 @@ nav {
     width: 100%;
     height: 706px;
     transform: translate3d(200%, 0px, 0px); }
-    @media only screen and (max-width: 1024px) {
-      #sliderWrap .slideThree {
-        height: 100%; } }
     #sliderWrap .slideThree .titleWrap {
       position: absolute;
       text-align: center;
@@ -300,9 +285,6 @@ nav {
     height: 706px;
     background: #cc3341;
     transform: translate3d(300%, 0px, 0px); }
-    @media only screen and (max-width: 1024px) {
-      #sliderWrap .slideFour {
-        height: 100%; } }
     #sliderWrap .slideFour .titleWrap {
       position: absolute;
       width: 100%;
