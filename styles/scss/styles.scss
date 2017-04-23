@@ -61,12 +61,17 @@ $border-grey: #d6d6d6;
     }
     .iphoneWrapper {
         position: absolute;
-        top: 226px;
+        bottom: 0;
         width: 97%;
         height: 480px;
         z-index: 100;
         overflow: hidden;
         @include background-image('http://images.apple.com/v/home/de/images/heroes/iphone7_productred_small.png', no-repeat, null, top center);
+        @include bp-xs {
+            left: 10px;
+            height: 428px;
+            @include background-image('https://images.apple.com/v/home/de/images/heroes/iphone7_productred_portrait_small_2x.png', no-repeat, auto 100%, bottom left );
+        }
     }
 }
 
@@ -92,6 +97,11 @@ $border-grey: #d6d6d6;
   @media only screen and (max-width: $break-sm) {
     @content;
   }
+}
+@mixin bp-xs {
+    @media only screen and (max-width: $break-xs) {
+        @content;
+    }
 }
 
 body, html {
@@ -149,6 +159,7 @@ nav {
             height: 44px;
             top: 0;
             vertical-align: middle;
+            cursor: pointer;
             &:first-child {
                 margin-left: 0;
                 font-size: 20px;
@@ -225,13 +236,14 @@ nav {
     position: absolute;
     width: 100%;
     height: 706px;
-    overflow: hidden;
     top: 0;
+    overflow: hidden;
 }
 
 #sliderWrap {
     width: 100%;
     height: 706px;
+    cursor: pointer;
     .slideOne {
         @include slides;
     }
@@ -252,13 +264,21 @@ nav {
                 width: 400px;
                 height: 50px;
                 margin: 0 auto;
-                @include background-image('https://images.apple.com/v/home/de/images/shared/watch_logo_large_2x.png', no-repeat, 122px 44px, center center)
+                @include background-image('https://images.apple.com/v/home/de/images/shared/watch_logo_large_2x.png', no-repeat, 122px 44px, center center);
+                @include bp-xs {
+                    width: 300px;
+                    margin-top: 40px;
+                }
             }
             h1 {
                 font-size: 45px;
                 font-weight: bold;
                 margin-top: 5px;
                 margin-right: -10px;
+                @include bp-xs {
+                    font-size: 36px;
+                    margin-top: 15px;
+                }
             }
         }
         .watchWrap {
@@ -268,7 +288,10 @@ nav {
             height: 100%;
             transform: translateY(5%);
             z-index: -1;
-            @include background-image('https://images.apple.com/v/home/de/images/heroes/watch_large_2x.jpg', no-repeat, contain, top center)
+            @include background-image('https://images.apple.com/v/home/de/images/heroes/watch_large_2x.jpg', no-repeat, contain, top center);
+            @include bp-xs {
+                background-position: center center;
+            }
         }
     }
     .slideThree {
@@ -283,6 +306,9 @@ nav {
             width: 100%;
             height: auto;
             top: 12%;
+            @include bp-xs {
+                top: 20%;
+            }
             h1 {
                 font-size: 30px;
                 margin-bottom: 5px;
@@ -291,6 +317,9 @@ nav {
                 font-size: 45px;
                 font-weight: bold;
                 margin-top: 0;
+                @include bp-xs {
+                    font-size: 36px;
+                }
             }
         }
         .ipadWrap {
@@ -300,11 +329,36 @@ nav {
             bottom: 0;
             z-index: -1;
             @include background-image('https://images.apple.com/v/home/de/images/heroes/ipad_availability_medium_2x.jpg', no-repeat, auto 100%, center center);
+            @include bp-xs {
+                bottom: 120px;
+                height: 297px;
+                @include background-image('https://images.apple.com/v/home/de/images/heroes/ipad_availability_small_2x.jpg', no-repeat, auto 100%, center center);
+            }
         }
     }
     .slideFour {
         @include slides;
         transform: translate3d(300%, 0px, 0px);
+    }
+}
+
+.sliderNav {
+    width: 180px;
+    height: 40px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    a {
+        display: inline-block;
+        width: 50px;
+        height: 2px;
+        background: rgba(128,128,128,0.8);
+        text-align: center;
+        margin: 5px;
+        cursor: pointer;
     }
 }
 
@@ -316,34 +370,55 @@ nav {
     border-top: 2px solid white;
     border-bottom: 2px solid white;
     z-index: 100;
+    cursor: pointer;
 }
 
 #quad1 {
     border-left: none;
     border-right: 2px solid white;
     @include background-image('http://images.apple.com/v/home/de/images/promos/wwdc17_large_2x.jpg', no-repeat, 360px 200px, null);
+    @include bp-xlg {
+        @include background-image('http://images.apple.com/v/home/de/images/promos/wwdc17_xlarge_2x.jpg', no-repeat, 640px 200px, null);
+    }
     @include bp-md {
+        border-right: none;
+        border-bottom: 1px solid white;
         @include background-image('http://images.apple.com/v/home/de/images/promos/wwdc17_medium_2x.jpg', no-repeat, 640px 200px, center center);
     }
 }
 #quad2 {
     border-right: 2px solid white;
     @include background-image('http://images.apple.com/v/home/de/images/promos/macbook_pro_large_2x.jpg', no-repeat, 360px 200px, null);
+    @include bp-xlg {
+        @include background-image('http://images.apple.com/v/home/de/images/promos/macbook_pro_xlarge_2x.jpg', no-repeat, 640px 200px, null);
+    }
     @include bp-md {
+        border-right: none;
+        border-bottom: 1px solid white;
         @include background-image('http://images.apple.com/v/home/de/images/promos/macbook_pro_medium_2x.jpg', no-repeat, 640px 200px, center center);
     }
 }
 #quad3 {
     border-right: 2px solid white;
     @include background-image('http://images.apple.com/v/home/de/images/promos/accessories_large_2x.jpg', no-repeat, 360px 200px, null);
+    @include bp-xlg {
+        @include background-image('http://images.apple.com/v/home/de/images/promos/accessories_xlarge_2x.jpg', no-repeat, 640px 200px, null);
+    }
     @include bp-md {
+        border-right: none;
+        border-top: 1px solid white;
         @include background-image('http://images.apple.com/v/home/de/images/promos/accessories_medium_2x.jpg', no-repeat, 640px 200px, center center);
     }
 }
 #quad4 {
     border-right: none;
     @include background-image('http://images.apple.com/v/home/de/images/promos/supplier_responsibility_large_2x.jpg', no-repeat, 360px 200px, null);
+    @include bp-xlg {
+        @include background-image('http://images.apple.com/v/home/de/images/promos/supplier_responsibility_xlarge_2x.jpg', no-repeat, 640px 200px, null);
+    }
     @include bp-md {
+        border-left: none;
+        border-top: 1px solid white;
         @include background-image('http://images.apple.com/v/home/de/images/promos/supplier_responsibility_medium_2x.jpg', no-repeat, 640px 200px, center center);
     }
 }
@@ -353,18 +428,16 @@ footer {
     font-size: 11px;
     height: auto;
     width: 100%;
-    @include bp-sm {
+    @include bp-md {
         padding-top: 20px;
     }
     .col-sm-12 {
         display: none;
         padding: 10px 0 10px 0;
-        margin-right: 15px;
-        margin-left: 15px;
         border-bottom: 1px solid $border-grey;
         cursor: pointer;
         font-size: 12px;
-        @include bp-sm {
+        @include bp-md {
             display: block;
         }
     }
@@ -374,18 +447,23 @@ footer {
         &:first-child {
             padding-bottom: 20px;
         }
+        @include bp-md {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
     }
     ul {
         list-style: none;
         padding-top: 20px;
         padding-left: 0;
-        @include bp-sm {
+        @include bp-md {
             display: none;
         }
     }    
     li {
         padding-left: 0;
         line-height: 1.7;
+        cursor: pointer;
         &:first-child {
             font-weight: bold;
         } 
@@ -395,6 +473,9 @@ footer {
 .footerWrap {
     color: $subtitles-grey;
     font-size: 12px;
+    @include bp-md {
+        padding: 0;
+    }
     p {
         margin-bottom: 6px;
     }
@@ -402,7 +483,7 @@ footer {
         border-top: 1px solid $border-grey;
         padding-top: 8px;
         margin-bottom: 43px;
-        @include bp-sm {
+        @include bp-md {
             border-top: none;
             margin-bottom: 10px;
         }
@@ -415,7 +496,7 @@ footer {
         }
         .legalLinks {
             text-align: left;
-            @include bp-sm {
+            @include bp-md {
                 padding-left: 0;
             }
             a {
@@ -428,8 +509,10 @@ footer {
                 &:last-child {
                     border-right: none;
                 }
-                @include bp-sm {
-                    padding-left: 0;
+                @include bp-md {
+                    &:first-child {
+                        padding-left: 0;
+                    }
                 }
             }
         }
